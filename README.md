@@ -17,15 +17,22 @@ The autoencoder was trained and optimized to achieve a high recall rate for frau
 - `images/`: Visuals and plots are all included in the notebook.
 - `isolation_forest_model.pkl`: Saved Isolation Forest model for conceptual deployment (optional).
 
-## Dependencies
-The project requires the following Python libraries:
-- numpy
-- pandas
-- scikit-learn
-- matplotlib
-- seaborn
-- TensorFlow/Keras
+## How to Get the Dataset
+The dataset used in this project is the [Credit Card Fraud Detection dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud), which contains anonymized credit card transactions made by European cardholders in September 2013. It is available for download on Kaggle.
 
-You can install these dependencies using:
-```bash
-pip install -r requirements.txt
+### Steps to Download the Dataset:
+1. Go to the [Kaggle Dataset Page](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud).
+2. Click "Download" and extract the dataset to your local machine.
+3. Place the dataset file (`creditcard.csv`) in the root directory or a `data/` folder in the repository.
+4. Run the notebook after placing the dataset in the correct folder.
+
+Make sure the dataset is named `creditcard.csv` for seamless loading in the notebook.
+
+### Example: How to Load the Dataset in Your Notebook
+```python 
+import os
+import pandas as pd
+
+# Load the dataset from the data folder or the root directory
+dataset_path = 'data/creditcard.csv' if os.path.exists('data/creditcard.csv') else 'creditcard.csv'
+df = pd.read_csv(dataset_path)
